@@ -157,7 +157,7 @@ class WeiboApis():
 
 if __name__ == '__main__':
     weiboApis = WeiboApis()
-    cookies_str = r'SCF=Ajh4L8OBQ-tXJiKUGE_lmfHysYXGMFk4Mp2mHGU4gB22MEEsudmDJJFKSMGGsy5LIoW1iBelXwmf4PpptNOUFkE.; SINAGLOBAL=3679216302677.1196.1731747701452; ULV=1731747701508:1:1:1:3679216302677.1196.1731747701452:; ALF=1735373084; SUB=_2A25KTFRMDeRhGeNP6VMY-SbFyDmIHXVpIOmErDV8PUJbkNANLVDekW1NTrOGPAbOwoEHvcMPfedhrZw9O9BVqHPq; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WFAoaDvic4uvBz-E5c_5gfw5JpX5KMhUgL.Fo-peo241Kn4e0-2dJLoIEyDi--ci-24iK.Ri--fi-82iK.7i--fiK.pi-z0i--NiKLWiKnXdg8a; WBPSESS=qVtvXfM6Pp6_zHT86UWMDdEsQz56uvZQsbWqIj8CStEKzzY-CxbwhCQiYqcA4M4Dmf4ga5-XORwmsO465h4TSTgp9n6tc1G4ILkRf2TfHfWGrrNbDK7-vqB6Tsx-z1tR7EvZamFT8S1YgJJzHztj_w==; XSRF-TOKEN=YUogRQgUmzxs_2kMMcdKgKMk'
+    cookies_str = os.environ.get("WEIBO_COOKIES", "")
     userId = "5266778656"
     # success, msg, res_json = weiboApis.getUserInfo(userId, cookies_str)
     # print(success, msg, res_json)

@@ -168,3 +168,16 @@ class Platform:
 
     def qr_start(self): raise PlatformError('此版本微博接口不支持扫码登录，请导入 Cookie')
     def qr_poll(self,token): raise PlatformError('请使用 Cookie 连接微博账号')
+
+    def tool(self,name,data):
+        if name!='profile': raise PlatformError('工具不存在')
+        uid=str(data.get('uid','')).strip()
+        if not re.fullmatch(r'\d{1,24}',uid): raise PlatformError('请输入数字 UID')
+        raw=checked(self.web.getUserInfo(uid,self.cookie()))
+        user=(raw.get('data') or {}).get('user') or {}
+        if not user.get('id'): raise PlatformError('未读取到博主画像')
+        return {'items':[{'id':'profile-'+uid,'kind':'profile','title':text(user.get('screen_name')),
+            'author':text(user.get('screen_name')),'uid':uid,'url':'https://weibo.com/u/'+uid,
+            'cover':image(user.get('avatar_hd') or user.get('profile_image_url')),
+            'text':text(user.get('description'))+'\n认证：'+text(user.get('verified_reason'))+'\n粉丝：'+str(user.get('followers_count','—'))+' · 关注：'+str(user.get('friends_count','—')),
+            'views':'—','likes':'—','comments':'—'}], 'notice':'公开博主画像；可点击作者作品继续研究'}

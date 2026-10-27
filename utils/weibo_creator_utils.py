@@ -88,7 +88,7 @@ def generate_upload_image_media_headers():
         'cache-control': 'no-cache',
         'content-type': 'application/octet-stream',
         # Requests sorts cookies= alphabetically
-        # 'cookie': 'SCF=Ag7ghnvRb8_0TRgNk0ap7bMGRYiCeDcHIubKvxvyE_XCKv9re2zre1vdYWHDBMhmYztud-73EKtK0jLcdpz_zoY.; SUB=_2A25Klnf3DeRhGeNP6VMY-SbFyDmIHXVp6vU_rDV8PUNbmtANLVn6kW9NTrOGPJaEoGXUSlh7F40epwjlwmTNU8ve; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WFAoaDvic4uvBz-E5c_5gfw5NHD95QfeKzp1K.R1KefWs4DqcjQICH8SbHW1C-41FH8SCHWxF-4eFH8SC-4eCHFeEH8SE-4BC-RSsfyd7tt; ALF=02_1740215463',
+        # Cookies are supplied by the authenticated account at runtime.
         'origin': 'https://weibo.com',
         'pragma': 'no-cache',
         'priority': 'u=1, i',
@@ -167,7 +167,7 @@ def generate_upload_video_media_headers(file_size, auth):
         'content-type': 'application/octet-stream',
         'host': 'up.video.weibocdn.com',
         # Requests sorts cookies= alphabetically
-        # 'cookie': 'SCF=Ag7ghnvRb8_0TRgNk0ap7bMGRYiCeDcHIubKvxvyE_XCKv9re2zre1vdYWHDBMhmYztud-73EKtK0jLcdpz_zoY.; SUB=_2A25Klnf3DeRhGeNP6VMY-SbFyDmIHXVp6vU_rDV8PUNbmtANLVn6kW9NTrOGPJaEoGXUSlh7F40epwjlwmTNU8ve; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WFAoaDvic4uvBz-E5c_5gfw5NHD95QfeKzp1K.R1KefWs4DqcjQICH8SbHW1C-41FH8SCHWxF-4eFH8SC-4eCHFeEH8SE-4BC-RSsfyd7tt; ALF=02_1740215463',
+        # Cookies are supplied by the authenticated account at runtime.
         'origin': 'https://weibo.com',
         'pragma': 'no-cache',
         'priority': 'u=1, i',

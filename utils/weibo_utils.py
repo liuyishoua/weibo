@@ -1,3 +1,4 @@
+import os
 import json
 
 
@@ -46,6 +47,6 @@ def trans_cookies(cookies_str):
     return ck
 
 if __name__ == '__main__':
-    cookies_str = r'SCF=Anw5unmXGv7Tj6t7PbmvNhMdWZ9Yr7WmreQRFne7gnyOFrGSKkRNYbe1I6AXsA9AQiNZCZqlPqhNX0_JWzKHo2Q.; SUB=_2A25KliLXDeRhGeNP6VMY-SbFyDmIHXVp6jofrDV8PUNbmtANLUT7kW9NTrOGPDNNtHyeh5TQisnuhT83OKQsGNJ1; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WFAoaDvic4uvBz-E5c_5gfw5NHD95QfeKzp1K.R1KefWs4DqcjQICH8SbHW1C-41FH8SCHWxF-4eFH8SC-4eCHFeEH8SE-4BC-RSsfyd7tt; ALF=02_1740234631; WBPSESS=qVtvXfM6Pp6_zHT86UWMDdEsQz56uvZQsbWqIj8CStEKzzY-CxbwhCQiYqcA4M4D1diFRNMAnSjXJcAI5JxPCtRV0JuljYtPI6RvxrfA7UDs4COQ-sYv7XgTaWPCr4xLWFC0wGz009EIN7aTbEKjzA=='
+    cookies_str = os.environ.get("WEIBO_COOKIES", "")
     cookies = trans_cookies(cookies_str)
     print(json.dumps(cookies, ensure_ascii=False))
